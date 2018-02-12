@@ -7,7 +7,7 @@ import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-public class mainclass {
+public class Dist2ContactMap {
 
 	private static int N;// rows (first group)
 	private static int M;// columns (second group)
@@ -19,8 +19,8 @@ public class mainclass {
 		Scanner s = new Scanner(System.in);
 		cutoff = Float.parseFloat(getParameter(args, "-cutoff", "0", "100"));
 
-		N = Integer.parseInt(getParameter(args, "-N", "0", "-1"));
-		M = Integer.parseInt(getParameter(args, "-M", "0", "-1"));
+		N = Integer.parseInt(getParameter(args, "-d1", "0", "-1"));
+		M = Integer.parseInt(getParameter(args, "-d2", "0", "-1"));
 		if (M < 0 || N < 0) {
 			// TODO parse file name in the format "(\\d+)X(\\d+)"
 		}
@@ -37,7 +37,7 @@ public class mainclass {
 			PrintStream out = new PrintStream(outputFilename);
 			writeOutput(a, out);
 		} catch (FileNotFoundException ex) {
-			Logger.getLogger(mainclass.class.getName()).log(Level.SEVERE, null, ex);
+			Logger.getLogger(Dist2ContactMap.class.getName()).log(Level.SEVERE, null, ex);
 		}
 
 	}
